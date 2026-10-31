@@ -1,0 +1,19 @@
+{
+    "name": "shetab/php-mvc",
+    "description": "The MVC mini farmework",
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/",
+            "Core\\": "core/"
+        }
+    },
+    "authors": [
+        {
+            "name": "hamog",
+            "email": "hashemm364@gmail.com"
+        }
+    ],
+    "require": {
+      "ext-pdo": "*"
+    }
+}
