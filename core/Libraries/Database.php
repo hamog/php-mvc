@@ -10,7 +10,7 @@ class Database extends PDO
     private string $servername = 'localhost';
     private string $dbname = 'mvc_db';
     private string $username = 'root';
-    private string $password = 'Shetab@2023'; //replace your database password
+    private string $password = '*********'; //replace your database password
     private string $charset = 'utf8mb4';
 
 
