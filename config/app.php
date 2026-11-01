@@ -7,6 +7,6 @@ return [
     'db_server' => 'localhost',
     'db_name' => 'mvc_db',
     'db_username' => 'root',
-    'db_password' => 'Shetab@2023',
+    'db_password' => '*********',
     'db_charset' => 'utf8mb4'
 ];
