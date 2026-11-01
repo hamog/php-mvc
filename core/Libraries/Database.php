@@ -7,16 +7,15 @@ use PDO;
 
 class Database extends PDO
 {
-    private string $servername = 'localhost';
-    private string $dbname = 'mvc_db';
-    private string $username = 'root';
-    private string $password = '*********'; //replace your database password
-    private string $charset = 'utf8mb4';
-
-
     public function __construct()
     {
-        parent::__construct("mysql:host=$this->servername;dbname=$this->dbname;charset=$this->charset", $this->username, $this->password);
+        $serverName = Config::get('db_server');
+        $dbName = Config::get('db_name');
+        $username = Config::get('db_username');
+        $password = Config::get('db_password');
+        $charset = Config::get('db_charset', 'utf8mb4');
+
+        parent::__construct("mysql:host=$serverName;dbname=$dbName;charset=$charset", $username, $password);
         // set the PDO error mode to exception
         $this->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         // set the PDO fetch method
