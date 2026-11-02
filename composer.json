@@ -1,6 +1,6 @@
 {
     "name": "shetab/php-mvc",
-    "description": "The MVC mini farmework",
+    "description": "The MVC mini framework project",
     "autoload": {
         "psr-4": {
             "App\\": "app/",

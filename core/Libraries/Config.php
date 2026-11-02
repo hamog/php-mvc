@@ -8,7 +8,7 @@ class Config
 
     public static function load(): void
     {
-        self::$configs = require_once __DIR__ . '/../../config/app.php';
+        self::$configs = require_once BASE_DIR . '/config/app.php';
     }
 
     public static function get(string $key, mixed $default = null): mixed

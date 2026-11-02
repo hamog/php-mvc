@@ -2,7 +2,8 @@
 
 use Core\Libraries\Database;
 
-require_once __DIR__ . '/core/bootstrap.php';
+const BASE_DIR = __DIR__;
+require_once BASE_DIR . '/core/bootstrap.php';
 
 //try {
 //    $db = new Database();

@@ -1,6 +1,6 @@
 <?php
 // composer autoloading
-require_once __DIR__ . '/../vendor/autoload.php';
+require_once BASE_DIR . '/vendor/autoload.php';
 
 use Core\Libraries\Config;
 use Core\Libraries\Router;

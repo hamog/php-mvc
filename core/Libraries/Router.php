@@ -8,7 +8,7 @@ class Router
 
     public function __construct()
     {
-        $this->routes = require_once __DIR__ . '/../../routes/web.php';
+        $this->routes = require_once BASE_DIR . '/routes/web.php';
     }
 
     public function resolve(): void
@@ -59,6 +59,6 @@ class Router
     {
         http_response_code(404);
 
-        require __DIR__ . '/../../app/Views/errors/404.php';
+        require BASE_DIR . '/app/Views/errors/404.php';
     }
 }
