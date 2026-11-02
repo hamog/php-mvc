@@ -1,0 +1,13 @@
+<?php
+
+use App\Controllers\HomeController;
+
+return [
+    'GET' => [
+        '/' => [HomeController::class, 'index'],
+        '/hello/([a-z]+)' => [HomeController::class, 'sayHello'],
+    ],
+    'POST' => [
+
+    ]
+];
