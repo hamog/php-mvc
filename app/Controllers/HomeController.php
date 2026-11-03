@@ -2,15 +2,17 @@
 
 namespace App\Controllers;
 
-class HomeController
+use Core\Libraries\View;
+
+class HomeController extends Controller
 {
-    public function index()
+    public function index(): void
     {
-        echo 'Home';
+        $this->view('home.index');
     }
 
-    public function sayHello(string $name)
+    public function sayHello(string $name): void
     {
-        echo "Hello $name";
+        $this->view('home.hello', ['name' => $name]);
     }
 }
