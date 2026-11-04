@@ -2,8 +2,6 @@
 
 namespace App\Controllers;
 
-use Core\Libraries\View;
-
 class HomeController extends Controller
 {
     public function index(): void
