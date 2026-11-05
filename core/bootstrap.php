@@ -8,6 +8,8 @@ use Core\Libraries\Router;
 // load configs
 Config::load();
 
+define("BASE_URL", Config::get('base_url'));
+
 // routing
 $router = new Router();
 $router->resolve();
