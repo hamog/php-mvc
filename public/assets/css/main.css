@@ -7,3 +7,7 @@ h1 {
 .text-center {
     text-align: center;
 }
+.alertify-notifier {
+    direction: rtl !important;
+    text-align: right !important;
+}

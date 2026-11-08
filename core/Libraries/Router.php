@@ -59,6 +59,8 @@ class Router
     {
         http_response_code(404);
 
+        require BASE_DIR . '/app/Views/layouts/header.php';
         require BASE_DIR . '/app/Views/errors/404.php';
+        require BASE_DIR . '/app/Views/layouts/footer.php';
     }
 }

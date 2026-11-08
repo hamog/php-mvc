@@ -17,4 +17,14 @@ class Controller
     {
         $this->view->render($template, $data);
     }
+
+    protected function success(string $notification): void
+    {
+        $_SESSION['success'] = $notification;
+    }
+
+    protected function error(string $notification): void
+    {
+        $_SESSION['error'] = $notification;
+    }
 }
