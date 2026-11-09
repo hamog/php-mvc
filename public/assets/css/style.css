@@ -1,0 +1,37 @@
+body{text-align:right;font-family:'Vazirmatn',Tahoma,sans-serif;background:#f6f7f9;color:#2b2f36;line-height:1.9}
+a{color:#1f3a5f}
+/* --- RTL fixes for Bootstrap 4 --- */
+.navbar-brand{margin-right:0;margin-left:1rem}
+.navbar-nav{padding-right:0}
+.carousel-control-prev{left:auto;right:0}.carousel-control-next{right:auto;left:0}
+.carousel-control-prev-icon,.carousel-control-next-icon{transform:scaleX(-1)}
+.breadcrumb-item+.breadcrumb-item{padding-left:0;padding-right:.5rem}
+.breadcrumb-item+.breadcrumb-item::before{padding-right:0;padding-left:.5rem}
+.input-group>.form-control:not(:last-child){border-radius:0 .25rem .25rem 0}
+.input-group-append{margin-left:0;margin-right:-1px}
+.input-group-append .btn{border-radius:.25rem 0 0 .25rem}
+.page-item:not(:first-child) .page-link{margin-left:0;margin-right:-1px}
+.page-item:first-child .page-link{border-radius:0 .25rem .25rem 0}
+.page-item:last-child .page-link{border-radius:.25rem 0 0 .25rem}
+/* --- Theme --- */
+.navbar{background:#1f3a5f}
+.navbar .nav-link{color:rgba(255,255,255,.8)}
+.navbar .nav-link:hover,.navbar .nav-item.active .nav-link{color:#fff}
+.carousel-item img{height:420px;object-fit:cover}
+.carousel-caption{background:rgba(0,0,0,.5);border-radius:.5rem;padding:.5rem 1.25rem;bottom:2rem}
+@media(max-width:576px){.carousel-item img{height:230px}}
+.section-title{border-right:4px solid #1f3a5f;padding-right:.75rem;margin:2.5rem 0 1.5rem;font-weight:700}
+.post-card{border:0;box-shadow:0 1px 4px rgba(0,0,0,.08)}
+.post-card img{height:190px;object-fit:cover}
+.post-card .card-title a{text-decoration:none}
+.post-card .card-title a:hover{text-decoration:underline}
+.post-date{font-size:.85rem;color:#6c757d}
+.article-box{background:#fff;border-radius:.4rem;padding:1.75rem;box-shadow:0 1px 4px rgba(0,0,0,.08)}
+.article-box img.cover{width:100%;max-height:420px;object-fit:cover;border-radius:.4rem}
+.tag{display:inline-block;background:#e6ecf4;color:#1f3a5f;border-radius:1rem;padding:0 .8rem;margin-left:.4rem;font-size:.85rem;text-decoration:none}
+.tag:hover{background:#1f3a5f;color:#fff;text-decoration:none}
+.page-link{color:#1f3a5f}.page-item.active .page-link{background:#1f3a5f;border-color:#1f3a5f}
+footer{background:#1f3a5f;color:rgba(255,255,255,.8);margin-top:3rem}
+/* بوت‌استرپ ۴ پیش‌فرض متن را چپ‌چین می‌کند؛ این‌جا راست‌چین می‌شود */
+th,.card,.breadcrumb,.alert,.dropdown-menu,.list-group-item{text-align:right}
+.carousel-caption,.text-center{text-align:center}
