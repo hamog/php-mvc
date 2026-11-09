@@ -14,7 +14,7 @@
 <!-- منو -->
 <nav class="navbar navbar-expand-md navbar-dark">
     <div class="container">
-        <a class="navbar-brand" href="index.html">نام سایت</a>
+        <a class="navbar-brand" href="index.html"><?= \Core\Libraries\Config::get('app_name') ?></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainMenu" aria-label="منو">
             <span class="navbar-toggler-icon"></span>
         </button>
