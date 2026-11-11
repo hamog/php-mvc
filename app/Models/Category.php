@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use Core\Libraries\Model;
+
 class Category extends Model
 {
     protected string $table = 'categories';

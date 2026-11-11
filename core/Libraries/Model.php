@@ -1,8 +1,6 @@
 <?php
 
-namespace App\Models;
-
-use Core\Libraries\Database;
+namespace Core\Libraries;
 
 abstract class Model
 {

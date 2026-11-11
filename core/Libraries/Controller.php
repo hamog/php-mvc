@@ -1,10 +1,8 @@
 <?php
 
-namespace App\Controllers;
+namespace Core\Libraries;
 
-use Core\Libraries\View;
-
-class Controller
+abstract class Controller
 {
     private View $view;
 
