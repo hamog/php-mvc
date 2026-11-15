@@ -4,7 +4,7 @@ namespace Core\Libraries;
 
 abstract class Controller
 {
-    private View $view;
+    private $view;
 
     public function __construct()
     {
@@ -24,5 +24,10 @@ abstract class Controller
     protected function error(string $notification): void
     {
         $_SESSION['error'] = $notification;
+    }
+
+    protected function redirect(string $url): void
+    {
+        header('Location:' . BASE_URL . $url);
     }
 }

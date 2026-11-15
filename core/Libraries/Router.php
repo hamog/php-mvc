@@ -33,7 +33,7 @@ class Router
                 $controller = new $action[0];
 
                 if ($method === 'POST') {
-                    $controller->{$action[1]}($param, $_POST);
+                    $controller->{$action[1]}($_POST, $param);
                 } else {
                     $controller->{$action[1]}($param);
                 }

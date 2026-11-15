@@ -9,8 +9,9 @@ return [
         '/hello/([a-z]+)' => [HomeController::class, 'sayHello'],
 
         '/categories' => [CategoryController::class, 'index'],
+        '/categories/create' => [CategoryController::class, 'create'],
     ],
     'POST' => [
-
+        '/categories/store' => [CategoryController::class, 'store'],
     ]
 ];
