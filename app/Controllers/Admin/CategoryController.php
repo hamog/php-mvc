@@ -26,21 +26,25 @@ class CategoryController extends Controller
         $this->view('admin.category.create');
     }
 
-    public function store($inputs): void
+    public function store(array $inputs): void
     {
-        $errors = [];
-        if (isset($inputs['name'])) {
-            $errors['name'] = 'نام دسته بندی را وارد کنید.';
+        //validation
+        $name = trim($inputs['name'] ?? '');
+        if ($name === '') {
+            $this->redirect('/categories/create', [
+                'errors' => ['name' => 'نام دسته‌بندی را وارد کنید!']
+            ]);
         }
-        if (count($errors) > 0) {
-            $this->redirect('/categories/create', ['errors' => $errors]);
-        }
-        $inputs['created_at'] = date("Y-m-d H:i:s");
+
+        $inputs['name'] = $name;
+        $inputs['created_at'] = date('Y-m-d H:i:s');
         $inputs['status'] = isset($inputs['status']) ? 1 : 0;
+
         $this->category->insert($inputs);
 
-        $this->success('دسته بندی با موفقیت ثبت شد.');
-        $this->redirect('/categories');
+        $this->redirect('/categories', [
+            'success' => 'دسته‌بندی با موفقیت ثبت شد.'
+        ]);
     }
 
     public function edit(int $id): void

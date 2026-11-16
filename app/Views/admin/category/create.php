@@ -10,8 +10,8 @@
                     <div class="form-group">
                         <label class="control-leabel" for="name">نام</label>
                         <input type="text" name="name" id="name" class="form-control">
-                        <?php if (isset($errors['name'])): ?>
-                            <div class="form-text text-danger"><?= $errors['name'] ?></div>
+                        <?php if (isset($_SESSION['errors']['name'])): ?>
+                            <div class="form-text text-danger"><?= $_SESSION['errors']['name']; ?></div>
                         <?php endif; ?>
                     </div>
                 </div>
@@ -25,6 +25,11 @@
             <div class="row">
                 <div class="col">
                     <button type="submit" class="btn btn-primary">ثبت و ذخیره</button>
+                    <?php
+                        if (isset($_SESSION['errors'])) {
+                            unset($_SESSION['errors']);
+                        }
+                    ?>
                 </div>
             </div>
         </form>

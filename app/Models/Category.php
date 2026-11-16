@@ -10,7 +10,7 @@ class Category extends Model
 
     public function getAll(): array
     {
-        return $this->db->select("SELECT * FROM {$this->table}", []);
+        return $this->db->select("SELECT * FROM `{$this->table}` ORDER BY `created_at` DESC", []);
     }
 
     public function query(string $sql)

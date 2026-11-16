@@ -20,10 +20,13 @@ abstract class Controller
         $_SESSION['error'] = $notification;
     }
 
-    protected function redirect(string $url, array $errors = []): void
+    protected function redirect(string $url, array $message = []): void
     {
+        if ($message) {
+            $key = key($message);
+            $_SESSION[$key] = $message[$key];
+        }
         header('Location:' . BASE_URL . $url);
-
         return;
     }
 }
