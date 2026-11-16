@@ -8,14 +8,14 @@ class Category extends Model
 {
     protected string $table = 'categories';
 
-    public function getAll(array $data = []): array
+    public function getAll(): array
     {
-        return $this->db->select("SELECT * FROM {$this->table}", $data);
+        return $this->db->select("SELECT * FROM {$this->table}", []);
     }
 
-    public function find(): array
+    public function query(string $sql)
     {
-        return $this->db->select("SELECT * FROM {$this->table} WHERE id = :id", $data);
+        return $this->db->query($sql);
     }
 
     public function insert(array $data): bool

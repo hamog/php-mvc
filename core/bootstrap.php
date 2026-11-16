@@ -17,6 +17,8 @@ Config::load();
 
 define("BASE_URL", Config::get('base_url'));
 
+date_default_timezone_set('Asia/Tehran');
+
 // routing
 $router = new Router();
 $router->resolve();

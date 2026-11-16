@@ -9,7 +9,7 @@ class CategoryController extends Controller
 {
     private Category $category;
 
-    public function __construct() 
+    public function __construct()
     {
         $this->category = new Category();
     }
@@ -28,29 +28,43 @@ class CategoryController extends Controller
 
     public function store($inputs) 
     {
+        $errors = [];
+        if (isset($inputs['name'])) {
+            $errors['name'] = 'نام دسته بندی را وارد کنید.';
+        }
+        if (count($errors) > 0) {
+            $this->redirect('/categories/create', ['errors' => $errors]);
+        }
+        $inputs['created_at'] = date("Y-m-d H:i:s");
+        $inputs['status'] = isset($inputs['status']) ? 1 : 0;
         $this->category->insert($inputs);
 
         $this->success('دسته بندی با موفقیت ثبت شد.');
         $this->redirect('/categories');
     }
+
+    public function edit(int $id)
+    {
+        $query = $this->category->query('SELECT * FROM categories WHERE id = ' . $id);
+        $category = $query->fetch();
+
+        $this->view('admin.category.edit', ['category' => $category]);
+    }
     
     public function update($inputs, $id) 
     {
-        $category = $this->category->find($id);
+        $inputs['status'] = isset($inputs['status']) ? 1 : 0;
+        $this->category->update($inputs, $id);
 
-        $this->category->update($inputs, );
-
-        $this->success('دسته بندی با موفقیت ثبت شد.');
-        $this->view('admin.category.index');
+        $this->success('دسته بندی با موفقیت به روزرسانی شد.');
+        $this->redirect('/categories');
     }
 
-    public function destroy($id) 
+    public function delete($id)
     {
-        $category = $this->category->find($id);
-        
-        $this->category->delete($category->id);
+        $this->category->delete($id);
 
-        $this->success('دسته بندی با موفقیت ثبت شد.');
-        $this->view('admin.category.index');
+        $this->success('دسته بندی با موفقیت حذف شد.');
+        $this->redirect('/categories');
     }
 }

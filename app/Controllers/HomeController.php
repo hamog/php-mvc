@@ -11,9 +11,4 @@ class HomeController extends Controller
         $this->success('به صفحه اصلی خوش آمدید.');
         $this->view('home.index');
     }
-
-    public function sayHello(string $name): void
-    {
-        $this->view('home.hello', ['name' => $name]);
-    }
 }

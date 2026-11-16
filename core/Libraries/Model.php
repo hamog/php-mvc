@@ -13,4 +13,6 @@ abstract class Model
         $database = new Database();
         $this->db = $database;
     }
+
+    abstract public function query(string $sql);
 }

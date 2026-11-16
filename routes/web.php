@@ -6,12 +6,14 @@ use App\Controllers\HomeController;
 return [
     'GET' => [
         '/' => [HomeController::class, 'index'],
-        '/hello/([a-z]+)' => [HomeController::class, 'sayHello'],
 
         '/categories' => [CategoryController::class, 'index'],
         '/categories/create' => [CategoryController::class, 'create'],
+        '/categories/edit/([0-9]+)' => [CategoryController::class, 'edit'],
+        '/categories/delete/([0-9]+)' => [CategoryController::class, 'delete'],
     ],
     'POST' => [
         '/categories/store' => [CategoryController::class, 'store'],
+        '/categories/update/([0-9]+)' => [CategoryController::class, 'update'],
     ]
 ];
