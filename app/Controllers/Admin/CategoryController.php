@@ -14,19 +14,19 @@ class CategoryController extends Controller
         $this->category = new Category();
     }
 
-    public function index() 
+    public function index(): void
     {
         $categories = $this->category->getAll();
 
         $this->view('admin.category.index', ['categories' => $categories]);
     }
 
-    public function create() 
+    public function create(): void
     {
         $this->view('admin.category.create');
     }
 
-    public function store($inputs) 
+    public function store($inputs): void
     {
         $errors = [];
         if (isset($inputs['name'])) {
@@ -43,7 +43,7 @@ class CategoryController extends Controller
         $this->redirect('/categories');
     }
 
-    public function edit(int $id)
+    public function edit(int $id): void
     {
         $query = $this->category->query('SELECT * FROM categories WHERE id = ' . $id);
         $category = $query->fetch();
@@ -51,7 +51,7 @@ class CategoryController extends Controller
         $this->view('admin.category.edit', ['category' => $category]);
     }
     
-    public function update($inputs, $id) 
+    public function update($inputs, $id): void
     {
         $inputs['status'] = isset($inputs['status']) ? 1 : 0;
         $this->category->update($inputs, $id);
@@ -60,7 +60,7 @@ class CategoryController extends Controller
         $this->redirect('/categories');
     }
 
-    public function delete($id)
+    public function delete($id): void
     {
         $this->category->delete($id);
 

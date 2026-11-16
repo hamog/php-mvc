@@ -1,6 +1,6 @@
 <div class="card mt-5">
     <div class="card-header">
-        <h1>ثبت دسته بندی</h1>
+        <h1>ویرایش دسته بندی</h1>
     </div>
     <div class="card-body">
 
