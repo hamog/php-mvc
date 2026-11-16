@@ -51,24 +51,32 @@ class CategoryController extends Controller
     {
         $query = $this->category->query('SELECT * FROM categories WHERE id = ' . $id);
         $category = $query->fetch();
+        if (!$category) {
+            $this->redirect('/categories', [
+                'error' => 'دسته بندی انتخاب شده پیدا نشد!'
+            ]);
+            return;
+        }
 
         $this->view('admin.category.edit', ['category' => $category]);
     }
     
-    public function update($inputs, $id): void
+    public function update(array $inputs, int $id): void
     {
         $inputs['status'] = isset($inputs['status']) ? 1 : 0;
         $this->category->update($inputs, $id);
 
-        $this->success('دسته بندی با موفقیت به روزرسانی شد.');
-        $this->redirect('/categories');
+        $this->redirect('/categories', [
+            'success' => 'دسته بندی با موفقیت به روزرسانی شد.'
+        ]);
     }
 
-    public function delete($id): void
+    public function delete(int $id): void
     {
         $this->category->delete($id);
 
-        $this->success('دسته بندی با موفقیت حذف شد.');
-        $this->redirect('/categories');
+        $this->redirect('/categories', [
+            'success' => 'دسته بندی با موفقیت حذف شد.'
+        ]);
     }
 }
