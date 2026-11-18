@@ -18,12 +18,12 @@ class CategoryController extends Controller
     {
         $categories = $this->category->getAll();
 
-        $this->view('admin.category.index', ['categories' => $categories]);
+        $this->view('admin.category.index', ['categories' => $categories], 'admin');
     }
 
     public function create(): void
     {
-        $this->view('admin.category.create');
+        $this->view('admin.category.create', [], 'admin');
     }
 
     public function store(array $inputs): void
@@ -58,7 +58,7 @@ class CategoryController extends Controller
             return;
         }
 
-        $this->view('admin.category.edit', ['category' => $category]);
+        $this->view('admin.category.edit', ['category' => $category], 'admin');
     }
     
     public function update(array $inputs, int $id): void
@@ -71,7 +71,7 @@ class CategoryController extends Controller
         ]);
     }
 
-    public function delete(int $id): void
+    public function delete(array $inputs, int $id): void
     {
         $this->category->delete($id);
 

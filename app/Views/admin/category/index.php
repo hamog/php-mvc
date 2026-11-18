@@ -29,7 +29,14 @@
                     <td><?= $category['created_at'] ?? '-' ?></td>
                     <td>
                         <a class="btn btn-warning" href="<?= BASE_URL ?>/categories/edit/<?= $category['id'] ?>" role="button">ویرایش</a>
-                        <a class="btn btn-danger" href="<?= BASE_URL ?>/categories/delete/<?= $category['id'] ?>" role="button">حذف</a>
+                        <form action="<?= BASE_URL ?>/categories/delete/<?= $category['id'] ?>" method="POST"
+                              onsubmit="return confirm('آیا از حذف این دسته‌بندی اطمینان دارید؟')" class="d-inline">
+
+                            <button type="submit" class="btn btn-danger">
+                                حذف
+                            </button>
+
+                        </form>
                     </td>
                 </tr>
             <?php endforeach; ?>

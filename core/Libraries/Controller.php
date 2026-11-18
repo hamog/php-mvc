@@ -4,10 +4,10 @@ namespace Core\Libraries;
 
 abstract class Controller
 {
-    protected function view(string $template, array $data = []): void
+    protected function view(string $template, array $data = [], string $layout = 'site'): void
     {
         $view = new View();
-        $view->render($template, $data);
+        $view->render($template, $data, $layout);
     }
 
     protected function success(string $notification): void

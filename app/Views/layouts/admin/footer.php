@@ -1,14 +1,10 @@
+<footer class="footer">© تمامی حقوق برای مدیریت‌یار محفوظ است.</footer>
+</main>
 </div>
-<!-- فوتر -->
-<footer class="py-4">
-    <div class="container text-center"><small>تمامی حقوق این سایت محفوظ است &copy; ۱۴۰۵</small></div>
-</footer>
 
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="<?= BASE_URL ?>/public/assets/plugins/alertifyjs/alertify.min.js"></script>
-<script src="<?= BASE_URL ?>/public/assets/js/data.js"></script>
-<script src="<?= BASE_URL ?>/public/assets/js/app.js"></script>
 <script>
     alertify.set('notifier', 'position', 'top-right')
 
