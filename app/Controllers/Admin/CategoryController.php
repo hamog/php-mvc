@@ -34,6 +34,7 @@ class CategoryController extends Controller
             $this->redirect('/categories/create', [
                 'errors' => ['name' => 'نام دسته‌بندی را وارد کنید!']
             ]);
+            return;
         }
 
         $inputs['name'] = $name;
