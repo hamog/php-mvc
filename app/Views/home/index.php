@@ -37,6 +37,21 @@
 <!-- آخرین مقالات -->
 <main class="container">
     <h2 class="section-title h4">آخرین مقالات</h2>
-    <div class="row" id="latest-articles"></div>
+    <div class="row">
+        <?php foreach ($posts as $post): ?>
+            <div class="col-12 col-md-6 col-lg-4 mb-4">
+                <div class="card post-card h-100">
+                    <a href="article.html?id=1">
+                        <img src="https://picsum.photos/id/1015/900/500"
+                             class="card-img-top"
+                             alt="<?= $post['title'] ?>"></a>
+                    <div class="card-body"><h3 class="card-title h5"><a href="article.html?id=1"><?= $post['title'] ?></a>
+                        </h3>
+                        <p class="card-text"><?= $post['body'] ?></p></div>
+                    <div class="card-footer bg-white border-0 post-date">تاریخ انتشار: <?= $post['created_at'] ?></div>
+                </div>
+            </div>
+        <?php endforeach; ?>
+    </div>
     <div class="text-center"><a class="btn btn-outline-primary" href="articles.html">مشاهده همه مقالات</a></div>
 </main>
