@@ -24,7 +24,7 @@
                 <li class="nav-item"><a class="nav-link" href="../../../../index.php">همه مقالات</a></li>
                 <li class="nav-item"><a class="nav-link" href="<?= BASE_URL ?>/dashboard">داشبورد</a></li>
             </ul>
-            <form class="form-inline mr-md-auto my-2 my-md-0" action="../../../../index.php" method="get">
+            <form class="form-inline mr-md-auto my-2 my-md-0" action="<?= BASE_URL ?>/" method="get">
                 <div class="input-group input-group-sm">
                     <input class="form-control" type="search" name="q" placeholder="جستجو در مقالات..."
                            aria-label="جستجو">
