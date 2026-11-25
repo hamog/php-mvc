@@ -31,9 +31,10 @@
             <div><strong>مدیر سیستم</strong><small>مدیر کل</small></div>
         </div>
         <div class="sidebar-heading">منوی اصلی</div>
-        <a class="side-link active" href="<?= BASE_URL ?>/dashboard"><span class="side-icon">▦</span> داشبورد</a>
-        <a class="side-link" href="<?= BASE_URL ?>/categories"><span class="side-icon">▧</span> دسته‌بندی‌ها</a>
-        <a class="side-link" href="<?= BASE_URL ?>"><span class="side-icon">⇥</span> خروج</a>
+        <a class="side-link<?php if ($_SERVER['REQUEST_URI'] == '/php-mvc/dashboard'): ?> active<?php endif; ?>" href="<?= BASE_URL ?>/dashboard"><span class="side-icon">▦</span> داشبورد</a>
+        <a class="side-link<?php if ($_SERVER['REQUEST_URI'] == '/php-mvc/categories'): ?> active<?php endif; ?>" href="<?= BASE_URL ?>/categories"><span class="side-icon">▧</span> دسته‌بندی‌ها</a>
+        <a class="side-link<?php if ($_SERVER['REQUEST_URI'] == '/php-mvc/posts'): ?> active<?php endif; ?>" href="<?= BASE_URL ?>/categories"><span class="side-icon">▧</span> مقالات</a>
+        <a class="side-link<?php if ($_SERVER['REQUEST_URI'] == '/php-mvc/logout'): ?> active<?php endif; ?>" href="<?= BASE_URL ?>"><span class="side-icon">⇥</span> خروج</a>
     </aside>
 
     <main class="main-content">
